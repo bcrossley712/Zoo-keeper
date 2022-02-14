@@ -25,6 +25,9 @@ export class ValuesController {
     _draw()
   }
 
+  showMeTheAnimals() {
+    valuesService.showMeTheAnimals()
+  }
   addValue() {
     valuesService.addValue()
   }
