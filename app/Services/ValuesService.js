@@ -57,9 +57,41 @@ let animalZ = new Zebra('Marty', 'black and white', true, 350, false, 'medium')
 
 
 let zooAnimals = [animalA, animalB, animalC, animalD, animalE, animalF, animalG, animalH, animalI, animalJ, animalK, animalL, animalM, animalN, animalO, animalP, animalQ, animalR, animalS, animalT, animalU, animalV, animalW, animalX, animalY, animalZ]
+
+let extraSmallCage = []
+let smallCage = []
+let mediumCage = []
+let largeCage = []
+let extraLargeCage = []
+
+
+
 class ValuesService {
   showMeTheAnimals() {
     console.log(zooAnimals);
+    for (let i = 0; i < zooAnimals.length; i++) {
+      let animal = zooAnimals[i]
+      if (animal.size == 'extra small') {
+        extraSmallCage.push(animal)
+      }
+      if (animal.size == 'small') {
+        smallCage.push(animal)
+      }
+      if (animal.size == 'medium') {
+        mediumCage.push(animal)
+      }
+      if (animal.size == 'large') {
+        largeCage.push(animal)
+      }
+      if (animal.size == 'extra large') {
+        extraLargeCage.push(animal)
+      }
+    }
+    console.log(extraSmallCage);
+    console.log(smallCage);
+    console.log(mediumCage);
+    console.log(largeCage);
+    console.log(extraLargeCage);
   }
   addValue() {
     ProxyState.values = [...ProxyState.values, new Value({ title: Math.random() })]
